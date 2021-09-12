@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.nav {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    justify-content: space-between;
+    background: #1d1de88c;
+    padding: 0.5rem;
+    color: #fff;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.panel {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+}
+
+.card {
+    background: green;
+    padding: 3rem;
+    border-radius: 2px;
+    margin-top: 2rem;
+}
+
+.card a {
+    color: #fff;
+    text-decoration: none;
+}
+
+form.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input[type="text"],input[type="email"], input[type="password"], input[type="date"], input[type="number"], select{
+    padding: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #635656;
+    width: 100%;
+}
+
+.general_details {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap: 1.5rem;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+.form-heading {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    text-decoration: underline;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.permanent_address,.temporary_address {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-around;
+    gap:3rem;
+    margin-top: 2rem;
+}
+
+.new_application {
+    padding-bottom: 3rem;
+}
+
+.btn {
+   
+    padding: 0.5rem;
+    border-radius: 0;
+    border: 1px;
+
+}
+
+.btn-primary {
+    background: #5591db;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-element {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    
+} 
+
+.btn-element .btn {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
