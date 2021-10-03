@@ -108,3 +108,13 @@ input[type="text"],input[type="email"], input[type="password"], input[type="date
     padding-right: 3rem;
     padding-left: 3rem;
 }
+.user_document {
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.user_document_element {
+    display: flex;
+    justify-content: space-around;
+    height: 5rem;
+  }

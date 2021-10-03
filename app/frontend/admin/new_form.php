@@ -1,5 +1,5 @@
 <div class="new_form">
-    <form action="" class="new_application">
+    <form action="../../backend/add_new_application.php" class="new_application" method="POST" enctype="multipart/form-data">
         <div class="form-heading">
             <h3>General Details</h3>
         </div>
@@ -95,7 +95,7 @@
         <div class="permanent_address">
             <div class="form-input">
                 <label for="">Province No.</label>
-                <select name="" id="">
+                <select name="p_province_no" id="">
                     <option value="">Province No.</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -109,7 +109,7 @@
 
             <div class="form-input">
                 <label for="">Zone</label>
-                <select name="" id="">
+                <select name="p_zone" id="">
                     <option value="">Zone.</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -123,7 +123,7 @@
 
             <div class="form-input">
                 <label for="">District</label>
-                <select name="" id="">
+                <select name="p_district" id="">
                     <option value="">District.</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -137,28 +137,28 @@
 
             <div class="form-input">
                 <label for="">Metro/Sub Metro/VDC</label>
-                <input type="text" name="metro" class="form-control">
+                <input type="text" name="p_metro" class="form-control">
             </div>
 
             <div class="form-input">
                 <label for="">Ward No.</label>
-                <input type="number" min="1" name="metro" class="form-control">
+                <input type="number" min="1" name="p_ward" class="form-control">
             </div>
 
             <div class="form-input">
                 <label for="">Street/Tole</label>
-                <input type="text" name="street" class="form-control">
+                <input type="text" name="p_street" class="form-control">
             </div>
         </div>
 
-        <!-- Temporary Address -->
+        <!-- Permanent Address -->
         <div class="form-heading">
             <h3>Temporary Address</h3>
         </div>
         <div class="permanent_address">
             <div class="form-input">
                 <label for="">Province No.</label>
-                <select name="" id="">
+                <select name="t_province_no" id="">
                     <option value="">Province No.</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -172,7 +172,7 @@
 
             <div class="form-input">
                 <label for="">Zone</label>
-                <select name="" id="">
+                <select name="t_zone" id="">
                     <option value="">Zone.</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -186,7 +186,7 @@
 
             <div class="form-input">
                 <label for="">District</label>
-                <select name="" id="">
+                <select name="t_district" id="">
                     <option value="">District.</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -200,19 +200,66 @@
 
             <div class="form-input">
                 <label for="">Metro/Sub Metro/VDC</label>
-                <input type="text" name="metro" class="form-control">
+                <input type="text" name="t_metro" class="form-control">
             </div>
 
             <div class="form-input">
                 <label for="">Ward No.</label>
-                <input type="number" min="1" name="metro" class="form-control">
+                <input type="number" min="1" name="t_ward" class="form-control">
             </div>
 
             <div class="form-input">
                 <label for="">Street/Tole</label>
-                <input type="text" name="street" class="form-control">
+                <input type="text" name="t_street" class="form-control">
             </div>
         </div>
+         <!-- User Document -->
+         <div class="form-heading">
+            <h3>User's Document</h3>
+        </div>
+        <div class="user_document">
+            <div class="user_document_element">
+                <div class="form-input">
+                    <label for="">Citizenship Card</label>
+                    <input type="file" name="citizenship_card">
+                </div>
+                <div class="form-input">
+                    <label for="">Citizenship Card Number</label>
+                    <input type="text" name="citizenship_no" class="form-control" placeholder="Enter your card number">
+                </div>
+            </div>
+            <div class="user_document_element">
+                <div class="form-input">
+                    <label for="">Passport</label>
+                    <input type="file" name="passport">
+                </div>
+                <div class="form-input">
+                    <label for="">Passport No.</label>
+                    <input type="text" name="passport_no" class="form-control" placeholder="Enter your card number">
+                </div>
+            </div>
+            <div class="user_document_element">
+                <div class="form-input">
+                    <label for="">License</label>
+                    <input type="file" name="license">
+                </div>
+                <div class="form-input">
+                    <label for="">License No.</label>
+                    <input type="text" name="license_no" class="form-control" placeholder="Enter your card number">
+                </div>
+            </div>
+            <div class="user_document_element">
+                <div class="form-input">
+                    <label for="">Pan Card</label>
+                    <input type="file" name="pancard">
+                </div>
+                <div class="form-input">
+                    <label for="">Pan Card No.</label>
+                    <input type="text" name="pancard_no" class="form-control" placeholder="Enter your card number">
+                </div>
+            </div>
+        </div>
+    
         <div class="btn-element">
             <div class="form-input">
                 <button class="btn btn-primary">Submit</button>
