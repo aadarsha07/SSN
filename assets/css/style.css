@@ -25,10 +25,13 @@
 }
 
 .card {
-    background: green;
+    background: #8282f2;
     padding: 3rem;
     border-radius: 2px;
     margin-top: 2rem;
+}
+.card:hover {
+    background: #7d7df0;
 }
 
 .card a {
