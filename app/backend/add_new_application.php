@@ -2,6 +2,7 @@
 include('connection.php');
 
 // General Details
+
 $fname = trim($_POST['fname']);
 $mname = trim($_POST['mname']);
 $lname = trim($_POST['lname']);
@@ -40,46 +41,102 @@ $passport_no = $_POST['passport_no'];
 $license_no = $_POST['license_no'];
 $pancard_no = $_POST['pancard_no'];
 
-// Inser General Details
+// User Id
+$dob_date = new DateTime($dob);
+$year_month = $dob_date->format('ym');
+$user_id = $_SESSION['id'];
+$user_key = $fname[0].'-'.date('y').$year_month.''.date('d');
 
-$sql = "INSERT INTO user_details (
-    first_name,
-    middle_name,
-    last_name,
-    gender,
-    dob,
-    grandfather_name,
-    father_name,
-    mother_name,
-    spouse_name,
-    son,
-    daughter,
-    occupation,
-    blood_group,
-    contact,
-    email
-    ) VALUES(
-        '$fname',
-        '$mname',
-        '$lname',
-        '$gender',
-        '$dob',
-        '$grand_father',
-        '$father',
-        '$mother',
-        '$spouse_name',
-        '$son',
-        '$daughter',
-        '$occupation',
-        '$blood_group',
-        '$contact',
-        '$email'    
-    )";
-    
+// User Docs
+$user_photo = $_FILES['user_photo'];
+$citizenship = $_FILES['citizenship_card'];
+$passport = $_FILES['passport'];
+$license = $_FILES['license'];
+$pancard = $_FILES['pancard'];
+
+global $error;
+$error = [];
+unset($_SESSION['errors']);
+unset($_SESSION['success-message']);
+
+// Insert General Details
+require("query/new_register_query.php");
     $query = $conn->query($sql);
-    if($query == True){
-        echo "New record added";
+    if($query){
+        if($user_photo["error"]===0){
+            $upload_status = uploadUserDoc($user_photo, 'photo');
+            $user_photo_file_name = $upload_status;
+        }
+        if($citizenship["error"]===0){
+            $upload_status = uploadUserDoc($citizenship, 'citizenship');
+            $citizenship_file_name = $upload_status;
+            if(empty($_POST['citizenship_no'])){
+                array_push($error, 'Citizenship no. field is required');
+            }
+            $c_n = $_POST['citizenship_no'];
+        }
+        if($passport['error']===0){
+            $upload_status = uploadUserDoc($passport, 'passport');
+            $passport_file_name = $upload_status;
+            if(empty($_POST['passport_no'])){
+                array_push($error, 'Passport no. field is required');
+            }
+            $pass_n = $_POST['passport_no'];
+        }
+        if($license['error']===0){
+            $upload_status = uploadUserDoc($license, 'license');
+            $license_file_name = $upload_status;
+            if(empty($_POST['license_no'])){
+                array_push($error, 'License no. field is required');
+            }
+            $lic_n = $_POST['license_no'];
+        }
+        if($pancard['error']===0){
+            $upload_status = uploadUserDoc($pancard, 'pancard');
+            $pancard_file_name = $upload_status;
+            if(empty($_POST['pancard_no'])){
+                array_push($error, 'Pan Card no. field is required');
+            }
+            $pan_n = $_POST['pancard_no'];
+        }
+        if(empty($error)) {
+            $sql = "INSERT INTO documents(user_id, user_key, photo, c_n, c_file, pass_n, pass_file, lic_n, lic_file, pan_n, pan_file) VALUES('$user_id', '$user_key', '$user_photo_file_name', '$c_n', '$citizenship_file_name', '$pass_n', '$passport_file_name', '$lic_n', '$license_file_name', '$pan_n', '$pancard_file_name')";
+            $query = $conn->query($sql);
+        }
+        else {
+            array_push($error,'Something went worng.');
+            $_SESSION['errors'] = $error;
+            header("Location:../frontend/admin");
+        }
+        {
+            if($query) {
+                $_SESSION['success-message'] = "Record Added !";
+                header("Location:../frontend/admin");
+            }
+            array_push($error, $conn->error);
+        }
     }
     else{
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        $_SESSION['ssn-data'] = $_POST;
+        header("Location:../frontend/admin");
+    }
+
+    function uploadUserDoc($file,$dir) {
+        global $error;
+        $extensions = ['jpg','jpeg','png']; 
+        $target_dir = "../../assets/images/$dir/";
+        $target_file = $target_dir.basename($file["name"]);
+        $ext = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+        if(!in_array($ext,$extensions)) {
+            array_push($error,"Sorry your file is not a image.");
+            return false;
+        }
+     
+        if(!move_uploaded_file($file["tmp_name"], $target_file)){
+            array_push($error,"Sorry something went wrong.");
+            return false;
+        }
+        return $file['name'];
+      
     }
