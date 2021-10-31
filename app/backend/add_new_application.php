@@ -63,6 +63,7 @@ unset($_SESSION['success-message']);
 require("query/new_register_query.php");
     $query = $conn->query($sql);
     if($query){
+        $last_id = $conn->insert_id;
         if($user_photo["error"]===0){
             $upload_status = uploadUserDoc($user_photo, 'photo');
             $user_photo_file_name = $upload_status;
@@ -100,7 +101,7 @@ require("query/new_register_query.php");
             $pan_n = $_POST['pancard_no'];
         }
         if(empty($error)) {
-            $sql = "INSERT INTO documents(user_id, user_key, photo, c_n, c_file, pass_n, pass_file, lic_n, lic_file, pan_n, pan_file) VALUES('$user_id', '$user_key', '$user_photo_file_name', '$c_n', '$citizenship_file_name', '$pass_n', '$passport_file_name', '$lic_n', '$license_file_name', '$pan_n', '$pancard_file_name')";
+            $sql = "INSERT INTO documents(user_id, user_key, photo, c_n, c_file, pass_n, pass_file, lic_n, lic_file, pan_n, pan_file, detail_id) VALUES('$user_id', '$user_key', '$user_photo_file_name', '$c_n', '$citizenship_file_name', '$pass_n', '$passport_file_name', '$lic_n', '$license_file_name', '$pan_n', '$pancard_file_name', '$last_id')";
             $query = $conn->query($sql);
         }
         else {

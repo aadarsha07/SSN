@@ -3,7 +3,7 @@
 <div id="superAdmin">
     <div class="panel">
         <div class="card">
-            <a href="new_application.php">New Application</a>
+            <a href="new_applications.php">New Application</a>
         </div>
         <div class="card">
             <a href="#">Verified Application</a>
