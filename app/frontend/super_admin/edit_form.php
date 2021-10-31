@@ -1,5 +1,5 @@
 <div class="new_form">
-    <form action="../../backend/add_new_application.php" class="new_application" method="POST" enctype="multipart/form-data">
+    <form action="../../backend/update_application.php/<?= $row['id'] ?>" class="new_application" method="POST" enctype="multipart/form-data">
     <!-- <?php
         if(isset($_SESSION['success-message'])){
             echo "<div class='text-success'>".$_SESSION['success-message']."</div>";
@@ -243,7 +243,8 @@
             <div class="user_document_element">
                 <div class="form-input">
                     <label for="">Photo</label>
-                    <input type="file" name="user_photo" required>
+                    <input type="file" name="user_photo">
+                    <input type="hidden" name="user_photo_name" value="<?=($doc['photo'] ?? null);?>" >
                 </div>
                 <div class="form-input">
                 </div>
@@ -251,17 +252,20 @@
             <div class="user_document_element">
                 <div class="form-input">
                     <label for="">Citizenship Card</label>
-                    <input type="file" name="citizenship_card" required>
+                    <input type="file" name="citizenship_card">
+                    <input type="hidden" name="citizenship_card_name" value="<?=($doc['c_file'] ?? null);?>" >
                 </div>
                 <div class="form-input">
                     <label for="">Citizenship Card Number</label>
-                    <input type="text" name="citizenship_no" class="form-control" value="<?=($doc['c_n'] ?? null);?>" placeholder="Enter your card number" required>
+                    <input type="text" name="citizenship_no" class="form-control" value="<?=($doc['c_n'] ?? null);?>" placeholder="Enter your card number">
                 </div>
             </div>
             <div class="user_document_element">
                 <div class="form-input">
                     <label for="">Passport</label>
                     <input type="file" name="passport">
+                    <input type="hidden" name="passport_name" value="<?=($doc['pass_file'] ?? null);?>" >
+                    
                 </div>
                 <div class="form-input">
                     <label for="">Passport No.</label>
@@ -272,6 +276,7 @@
                 <div class="form-input">
                     <label for="">License</label>
                     <input type="file" name="license">
+                    <input type="hidden" name="license_name" value="<?=($doc['lic_file'] ?? null);?>" >
                 </div>
                 <div class="form-input">
                     <label for="">License No.</label>
@@ -282,6 +287,7 @@
                 <div class="form-input">
                     <label for="">Pan Card</label>
                     <input type="file" name="pancard">
+                    <input type="hidden" name="pancard_name" value="<?=($doc['pan_file'] ?? null);?>" >
                 </div>
                 <div class="form-input">
                     <label for="">Pan Card No.</label>

@@ -1,0 +1,31 @@
+<?php
+
+$sql = "UPDATE user_details SET 
+first_name='$fname', 
+middle_name='$mname', 
+last_name='$lname', 
+gender='$gender', 
+dob='$dob', 
+grandfather_name='$grand_father',
+father_name='$father',
+mother_name='$mother',
+spouse_name='$spouse_name',
+son='$son', 
+daughter='$daughter', 
+occupation='$occupation', 
+blood_group='$blood_group', 
+contact='$contact',
+email='$email',
+pri_pro_no='$p_province_no',
+pri_zone='$p_zone' ,
+pri_district='$p_district', 
+pri_city='$p_metro', 
+pri_ward='$p_ward', 
+pri_street='$p_street',
+temp_pro_no='$t_province_no', 
+temp_zone='$t_zone', 
+temp_district='$t_district',
+temp_city='$t_metro', 
+temp_ward='$t_ward', 
+temp_street='$t_street'
+WHERE id=$id";

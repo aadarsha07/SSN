@@ -1,7 +1,7 @@
 <?php 
     include('../header.php'); 
     include('../../backend/session.php');
-    include('../../backend/new_application.php'); 
+    include('../../backend/verified_application.php'); 
 ?>
 <table>
   <tr>
@@ -20,9 +20,9 @@
     <td><?= $row['gender'] ?></td>
     <td><?= $row['user_key'] ?></td>
     <td><a href="edit_application.php?id=<?= $row['id']; ?>">Edit</a></td>
-    <td>View</td>
+    <td><a href="show_application.php?id=<?= $row['id']; ?>">View</a></td>
     <td><a href="../../backend/delete_application.php?id=<?= $row['id']; ?>">Delete</a></td>
-    <td><a href="../../backend/active.php?id=<?= $row['id']; ?>">Active</a></td>
+    <td><a href="../../backend/active.php?id=<?= $row['id']; ?>">Inactive</a></td>
   </tr>
  <?php } ?>
  

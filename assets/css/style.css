@@ -154,3 +154,18 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  .thumb_img {
+    max-width: 4rem;
+}
+
+.view_tb {
+    max-width: 64rem;
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
