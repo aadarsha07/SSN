@@ -1,6 +1,7 @@
 <?php
 
 include("connection.php");
+include("session.php");
 
 $name = $_POST['name'];
 $email = $_POST['email'];

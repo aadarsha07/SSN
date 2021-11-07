@@ -1,6 +1,7 @@
 <?php 
 
 include('connection.php');
+include('session.php');
 
 $sql = "DELETE FROM user_details WHERE id = $_GET[id]";
 $query = $conn->query($sql);

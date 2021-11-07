@@ -6,4 +6,4 @@ $pass = "";
 $db = "ssn";
 
 $conn = new mysqli($host, $user, $pass, $db);
-session_start();
+$_SESSION['ssn-data'] = null;

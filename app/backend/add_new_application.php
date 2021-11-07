@@ -1,5 +1,6 @@
 <?php
 include('connection.php');
+include('session.php');
 
 // General Details
 
@@ -59,6 +60,7 @@ $error = [];
 unset($_SESSION['errors']);
 unset($_SESSION['success-message']);
 
+
 // Insert General Details
 require("query/new_register_query.php");
     $query = $conn->query($sql);
@@ -107,6 +109,7 @@ require("query/new_register_query.php");
         else {
             array_push($error,'Something went worng.');
             $_SESSION['errors'] = $error;
+            $_SESSION['ssn-data'] = $_POST;
             header("Location:../frontend/admin");
         }
         {
@@ -115,10 +118,12 @@ require("query/new_register_query.php");
                 header("Location:../frontend/admin");
             }
             array_push($error, $conn->error);
+            unset($_SESSION['success-message']);
         }
     }
     else{
         $_SESSION['ssn-data'] = $_POST;
+        unset($_SESSION['success-message']);
         header("Location:../frontend/admin");
     }
 
