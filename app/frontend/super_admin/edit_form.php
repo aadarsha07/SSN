@@ -210,13 +210,13 @@
                 <label for="">District</label>
                 <select name="t_district" id="t_district">
                     <option value="0">District.</option>
-                    <option value="1" <?= (($row['temp_distric'] === "1") ? "selected" : null) ?> >1</option>
-                    <option value="2" <?= (($row['temp_distric'] === "2") ? "selected" : null) ?> >2</option>
-                    <option value="3" <?= (($row['temp_distric'] === "3") ? "selected" : null) ?> >3</option>
-                    <option value="4"<?= (($row['temp_distric'] === "4") ? "selected" : null) ?> >4</option>
-                    <option value="5" <?= (($row['temp_distric'] === "5") ? "selected" : null) ?> >5</option>
-                    <option value="6" <?= (($row['temp_distric'] === "6") ? "selected" : null) ?> >6</option>
-                    <option value="7" <?= (($row['temp_distric'] === "7") ? "selected" : null) ?> >7</option>
+                    <option value="1" <?= (($row['temp_district'] === "1") ? "selected" : null) ?> >1</option>
+                    <option value="2" <?= (($row['temp_district'] === "2") ? "selected" : null) ?> >2</option>
+                    <option value="3" <?= (($row['temp_district'] === "3") ? "selected" : null) ?> >3</option>
+                    <option value="4"<?= (($row['temp_district'] === "4") ? "selected" : null) ?> >4</option>
+                    <option value="5" <?= (($row['temp_district'] === "5") ? "selected" : null) ?> >5</option>
+                    <option value="6" <?= (($row['temp_district'] === "6") ? "selected" : null) ?> >6</option>
+                    <option value="7" <?= (($row['temp_district'] === "7") ? "selected" : null) ?> >7</option>
                 </select>
             </div>
 
