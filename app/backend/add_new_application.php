@@ -63,69 +63,68 @@ unset($_SESSION['success-message']);
 
 // Insert General Details
 require("query/new_register_query.php");
-    $query = $conn->query($sql);
-    if($query){
-        $last_id = $conn->insert_id;
-        if($user_photo["error"]===0){
-            $upload_status = uploadUserDoc($user_photo, 'photo');
-            $user_photo_file_name = $upload_status;
+    if($user_photo["error"]===0){
+        $upload_status = uploadUserDoc($user_photo, 'photo');
+        $user_photo_file_name = $upload_status;
+    }
+    if($citizenship["error"]===0){
+        $upload_status = uploadUserDoc($citizenship, 'citizenship');
+        $citizenship_file_name = $upload_status;
+        if(empty($_POST['citizenship_no'])){
+            array_push($error, 'Citizenship no. field is required');
         }
-        if($citizenship["error"]===0){
-            $upload_status = uploadUserDoc($citizenship, 'citizenship');
-            $citizenship_file_name = $upload_status;
-            if(empty($_POST['citizenship_no'])){
-                array_push($error, 'Citizenship no. field is required');
-            }
-            $c_n = $_POST['citizenship_no'];
+        $c_n = $_POST['citizenship_no'];
+    }
+    if($passport['error']===0){
+        $upload_status = uploadUserDoc($passport, 'passport');
+        $passport_file_name = $upload_status;
+        if(empty($_POST['passport_no'])){
+            array_push($error, 'Passport no. field is required');
         }
-        if($passport['error']===0){
-            $upload_status = uploadUserDoc($passport, 'passport');
-            $passport_file_name = $upload_status;
-            if(empty($_POST['passport_no'])){
-                array_push($error, 'Passport no. field is required');
-            }
-            $pass_n = $_POST['passport_no'];
+        $pass_n = $_POST['passport_no'];
+    }
+    if($license['error']===0){
+        $upload_status = uploadUserDoc($license, 'license');
+        $license_file_name = $upload_status;
+        if(empty($_POST['license_no'])){
+            array_push($error, 'License no. field is required');
         }
-        if($license['error']===0){
-            $upload_status = uploadUserDoc($license, 'license');
-            $license_file_name = $upload_status;
-            if(empty($_POST['license_no'])){
-                array_push($error, 'License no. field is required');
-            }
-            $lic_n = $_POST['license_no'];
+        $lic_n = $_POST['license_no'];
+    }
+    if($pancard['error']===0){
+        $upload_status = uploadUserDoc($pancard, 'pancard');
+        $pancard_file_name = $upload_status;
+        if(empty($_POST['pancard_no'])){
+            array_push($error, 'Pan Card no. field is required');
         }
-        if($pancard['error']===0){
-            $upload_status = uploadUserDoc($pancard, 'pancard');
-            $pancard_file_name = $upload_status;
-            if(empty($_POST['pancard_no'])){
-                array_push($error, 'Pan Card no. field is required');
-            }
-            $pan_n = $_POST['pancard_no'];
-        }
-        if(empty($error)) {
+        $pan_n = $_POST['pancard_no'];
+    }
+    if(empty($error)){
+        $query = $conn->query($sql);
+        if($query) {
+            $last_id = $conn->insert_id;
             $sql = "INSERT INTO documents(user_id, user_key, photo, c_n, c_file, pass_n, pass_file, lic_n, lic_file, pan_n, pan_file, detail_id) VALUES('$user_id', '$user_key', '$user_photo_file_name', '$c_n', '$citizenship_file_name', '$pass_n', '$passport_file_name', '$lic_n', '$license_file_name', '$pan_n', '$pancard_file_name', '$last_id')";
             $query = $conn->query($sql);
         }
         else {
             array_push($error,'Something went worng.');
             $_SESSION['errors'] = $error;
-            $_SESSION['ssn-data'] = $_POST;
-            header("Location:../frontend/admin");
+            $_SESSION['ssn-data'] = "hello";
+            return header("Location:../frontend/admin");
         }
         {
             if($query) {
                 $_SESSION['success-message'] = "Record Added !";
-                
+                unset($_SESSION['ssn-data']);
                 return header("Location:../frontend/admin");
             }
-            array_push($error, $conn->error);
-            unset($_SESSION['success-message']);
         }
     }
     else{
+        $_SESSION['errors'] = $error;
         $_SESSION['ssn-data'] = $_POST;
         unset($_SESSION['success-message']);
-        header("Location:../frontend/admin");
+        return header("Location:../frontend/admin");
     }
 
     function uploadUserDoc($file,$dir) {
