@@ -38,7 +38,7 @@
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
                     <div class="form-input">
-                        <a href="../index.php">Already have an account</a>
+                        <a href="../../index.php">Already have an account</a>
                     </div>
                 </form>
             </div>

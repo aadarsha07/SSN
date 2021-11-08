@@ -1,6 +1,7 @@
 <?php
 include('connection.php');
 include('session.php');
+include('check_pending.php');
 
 // General Details
 
@@ -116,7 +117,7 @@ require("query/new_register_query.php");
             if($query) {
                 $_SESSION['success-message'] = "Record Added !";
                 unset($_SESSION['ssn-data']);
-                return header("Location:../frontend/admin");
+                return header("Location:../frontend/admin/check_pending.php");
             }
         }
     }
