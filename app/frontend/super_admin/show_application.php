@@ -3,6 +3,7 @@
     include('../../backend/session.php');
     include('../../backend/edit_application.php'); 
 ?>
+
 <h3 class="text-center">
     Gneral Details
 </h3>
@@ -131,6 +132,7 @@
     User's Document
 </h3>
 <table class="view_tb">
+  
     <tr>
         <th>Photo:</th>
         <td><img class="thumb_img" src="../../../assets/images/photo/<?= $doc['photo']; ?>" ></td>
