@@ -11,7 +11,7 @@
 <body>
 <div class="nav">
     <div class="logo">
-        <h3>SSN</h3>
+        <a href="index.php"><h3>SSN</h3></a>
     </div>
     <div class="logout">
         <a href="../../backend/logout.php">

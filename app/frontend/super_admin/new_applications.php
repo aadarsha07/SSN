@@ -20,7 +20,7 @@
     <td><?= $row['gender'] ?></td>
     <td><?= $row['user_key'] ?></td>
     <td><a href="edit_application.php?id=<?= $row['id']; ?>">Edit</a></td>
-    <td>View</td>
+    <td><a href="show_application.php?id=<?= $row['id']; ?>">View</a></td>
     <td><a href="../../backend/delete_application.php?id=<?= $row['id']; ?>">Delete</a></td>
     <td><a href="../../backend/active.php?id=<?= $row['id']; ?>">Active</a></td>
   </tr>
