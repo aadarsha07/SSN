@@ -14,7 +14,7 @@
                 <h1>SSN Register</h1>
             </div>
             <div class="login">
-                <form action="backend/register.php" class="login-form" method="POST">
+                <form action="../backend/register.php" class="login-form" method="POST">
                     <div class="message">
                         <?php 
                         if(isset($_GET['message'])) {
