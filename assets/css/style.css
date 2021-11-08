@@ -169,3 +169,18 @@ table {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+.search_form {
+    width: 14rem;
+    margin: 2rem;
+}
+
+.search_btn {
+    margin-top: 3rem;
+    padding: .5rem;
+    border-radius: 0;
+    background: #8282f2;
+    color: #ffff;
+    border: 0;
+    width: 50%;
+  }

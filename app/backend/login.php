@@ -22,14 +22,17 @@ if(password_verify($pass,$row['password'] )) {
         header("Location:../frontend/super_admin/index.php");
     }
     elseif($row['role'] == 'A') {
-        $sql = "SELECT * FROM user_details WHERE id=$_SESSION[id]";
+        $sql = "SELECT * FROM user_details WHERE user_id=$_SESSION[id]";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         if($result->num_rows <=0){
             return header("Location:../frontend/admin/index.php");
         }
-        if($row['active']!==1){
-            return header("Location:../frontend/admin/index.php");
+        if($row['active']==0){
+            return header("Location:../frontend/admin/pending_view.php");
+        }
+        else{
+            return header("Location:../frontend/super_admin/show_application.php?id={$row['id']}");
         }
     }
 }
