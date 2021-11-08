@@ -54,7 +54,8 @@
 
             <div class="form-input">
                 <label for="">Email</label>
-                <input type="email" name="email" class="form-control" value="<?=($_SESSION['ssn-data']['email'] ?? null);?>" placeholder="Enter your email">
+                <input type="email" readonly class="form-control" value="<?= $_SESSION['email']; ?>" placeholder="Enter your email">
+                <input type="hidden" readonly name="email" class="form-control" value="<?= $_SESSION['email']; ?>">
             </div>
 
             <div class="form-input">

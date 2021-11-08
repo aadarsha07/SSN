@@ -1,7 +1,7 @@
 <?php 
     include('../header.php'); 
     include('../../backend/session.php');
-    include('../../backend/new_application.php'); 
+    include('../../backend/search_application.php'); 
 ?>
 <table>
   <tr>
@@ -22,7 +22,7 @@
     <td><a href="edit_application.php?id=<?= $row['id']; ?>">Edit</a></td>
     <td><a href="show_application.php?id=<?= $row['id']; ?>">View</a></td>
     <td><a href="javascript:void(0)" onclick="deleteRecord(<?= $row['id']; ?>)">Delete</a></td>
-    <td><a href="../../backend/active.php?id=<?= $row['id']; ?>">Active</a></td>
+    <td><a href="../../backend/active.php?id=<?= $row['id']; ?>">Inactive</a></td>
   </tr>
  <?php } ?>
  

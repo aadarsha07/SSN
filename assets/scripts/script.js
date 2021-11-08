@@ -1,5 +1,12 @@
 // Copy permanent address
 
+function deleteRecord(id) {
+    if(confirm("Do you want to delete this record ?")){
+        window.location.href = "../../backend/delete_application.php?id="+id;
+    }
+    return false;
+}
+
 function sameAsPermanentAddress(tempBox){
     let p_province_no = document.getElementById('p_province_no').value;
     let p_zone = document.getElementById('p_zone').value;

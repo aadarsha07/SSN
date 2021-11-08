@@ -21,7 +21,7 @@
     <td><?= $row['user_key'] ?></td>
     <td><a href="edit_application.php?id=<?= $row['id']; ?>">Edit</a></td>
     <td><a href="show_application.php?id=<?= $row['id']; ?>">View</a></td>
-    <td><a href="../../backend/delete_application.php?id=<?= $row['id']; ?>">Delete</a></td>
+    <td><a href="javascript:void(0)" onclick="deleteRecord(<?= $row['id']; ?>)">Delete</a></td>
     <td><a href="../../backend/active.php?id=<?= $row['id']; ?>">Inactive</a></td>
   </tr>
  <?php } ?>

@@ -115,7 +115,8 @@ require("query/new_register_query.php");
         {
             if($query) {
                 $_SESSION['success-message'] = "Record Added !";
-                header("Location:../frontend/admin");
+                
+                return header("Location:../frontend/admin");
             }
             array_push($error, $conn->error);
             unset($_SESSION['success-message']);
