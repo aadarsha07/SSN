@@ -42,7 +42,7 @@
                     <input type="radio" name="gender" value="F" id="female" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['gender'] == 'F' ? 'checked' : null) : null ) ?> required>
                     <label for="female">Female</label>
                     <input type="radio" name="gender" value="O" id="others" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['gender'] == 'O' ? 'checked' : null) : null ) ?> required>
-                    <label for="others">Khusi</label>
+                    <label for="others">Others</label>
                 </div>
             </div>
 
@@ -113,12 +113,12 @@
                 <select name="p_province_no" id="p_province_no" required>
                     <option value="0">Province No.</option>
                     <option value="1" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >1</option>
-                    <option value="2" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >1</option>
-                    <option value="3" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >1</option>
-                    <option value="4" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >1</option>
-                    <option value="5" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >1</option>
-                    <option value="6" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >1</option>
-                    <option value="7" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >1</option>
+                    <option value="2" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >2</option>
+                    <option value="3" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >3</option>
+                    <option value="4" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >4</option>
+                    <option value="5" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >5</option>
+                    <option value="6" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >6</option>
+                    <option value="7" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_province_no'] == '1' ? 'selected' : null) : null ) ?> >7</option>
                 </select>
             </div>
 
@@ -126,7 +126,7 @@
                 <label for="">Zone</label>
                 <select name="p_zone" id="p_zone" required>
                     <option value="0">Zone.</option>
-                    <option value="1" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_zone'] == '1' ? 'selected' : null) : null ) ?> >1</option>
+                    <option value="1" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_zone'] == '1' ? 'selected' : null) : null ) ?> >Gandaki</option>
                     <option value="2" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_zone'] == '1' ? 'selected' : null) : null ) ?> >1</option>
                     <option value="3" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_zone'] == '1' ? 'selected' : null) : null ) ?> >1</option>
                     <option value="4" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_zone'] == '1' ? 'selected' : null) : null ) ?> >1</option>
@@ -141,7 +141,7 @@
                 <label for="">District</label>
                 <select name="p_district" id="p_district" required>
                     <option value="0">District.</option>
-                    <option value="1" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_district'] == '1' ? 'selected' : null) : null ) ?> >1</option>
+                    <option value="1" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_district'] == '1' ? 'selected' : null) : null ) ?> >Kaski</option>
                     <option value="2" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_district'] == '1' ? 'selected' : null) : null ) ?> >1</option>
                     <option value="3" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_district'] == '1' ? 'selected' : null) : null ) ?> >1</option>
                     <option value="4" <?= (isset($_SESSION['ssn-data']) ? ($_SESSION['ssn-data']['p_district'] == '1' ? 'selected' : null) : null ) ?> >1</option>
