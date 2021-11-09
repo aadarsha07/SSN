@@ -1,4 +1,4 @@
-<?php include('../header.php'); ?>
+<?php include('header.php'); ?>
 <?php include('../../backend/session.php'); ?>
 <div id="admin">
     <?php

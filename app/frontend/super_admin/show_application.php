@@ -1,5 +1,5 @@
 <?php 
-    include('../header.php'); 
+    include('../admin/header.php'); 
     include('../../backend/session.php');
     include('../../backend/edit_application.php'); 
 ?>
