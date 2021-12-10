@@ -11,7 +11,7 @@
     <div class="main">
         <div id="login">
             <div class="heading">
-                <h1>SSN </h1>
+                <h1>Social Safety Number </h1>
             </div>
             <div class="login">
                 <form action="app/backend/login.php" class="login-form" method="POST">

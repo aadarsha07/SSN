@@ -27,7 +27,7 @@
 
             <div class="form-input">
                 <label for="">Middle Name</label>
-                <input type="text" name="mname" class="form-control" value="<?= $row['middle_name']?>"" placeholder="Enter your middle name" required>
+                <input type="text" name="mname" class="form-control" value="<?= $row['middle_name']?>"" placeholder="Enter your middle name" >
             </div>
 
             <div class="form-input">
@@ -126,7 +126,7 @@
                 <label for="">Zone</label>
                 <select name="p_zone" id="p_zone" required>
                     <option value="0">Zone.</option>
-                    <option value="1" <?= (($row['pri_zone'] === "1") ? "selected" : null) ?> >1</option>
+                    <option value="1" <?= (($row['pri_zone'] === "1") ? "selected" : null) ?> >Gandaki</option>
                     <option value="2" <?= (($row['pri_zone'] === "2") ? "selected" : null) ?> >2</option>
                     <option value="3" <?= (($row['pri_zone'] === "3") ? "selected" : null) ?> >3</option>
                     <option value="4"<?= (($row['pri_zone'] === "4") ? "selected" : null) ?> >4</option>
@@ -140,7 +140,7 @@
                 <label for="">District</label>
                 <select name="p_district" id="p_district" required>
                     <option value="0">District.</option>
-                    <option value="1" <?= (($row['pri_district'] === "1") ? "selected" : null) ?> >1</option>
+                    <option value="1" <?= (($row['pri_district'] === "1") ? "selected" : null) ?> >Kaski</option>
                     <option value="2" <?= (($row['pri_district'] === "2") ? "selected" : null) ?> >2</option>
                     <option value="3" <?= (($row['pri_district'] === "3") ? "selected" : null) ?> >3</option>
                     <option value="4"<?= (($row['pri_district'] === "4") ? "selected" : null) ?> >4</option>
